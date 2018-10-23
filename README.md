@@ -20,7 +20,9 @@ Documentation for Jupyter Notebook can be found [here](http://jupyter-notebook.r
 For predicting article quality, the [ORES API](https://www.mediawiki.org/wiki/ORES) was used.
 
 The following Python packages were used and their documentation can be found at the accompanying links:
- * [pandas](https://pandas.pydata.org/pandas-docs/stable/api.html)
+ * [pandas](https://pandas.pydata.org/pandas-docs/stable/api.html): Python Data Analysis Library
+ * [tqdm](https://github.com/tqdm/tqdm): Fast and Extensible Progress Bar
+ * [requests](http://docs.python-requests.org/en/master/): HTTP for Humans
 
 ## Files Created
 
