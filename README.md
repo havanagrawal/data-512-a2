@@ -1,16 +1,26 @@
 # Bias in Data
 
-## Goal
+## <a name="toc"></a>Table of Contents
+
+1. [Goal](#goal)
+2. [Data Sources](#datasources)
+    1. [Data Schemas](#schemas)
+3. [Resources Used](#resources)
+4. [Files Created](#files)
+5. [Reproducibility](#reproducibility)
+6. [License](#license)
+
+## <a name="goal"></a>Goal
 
 The goal of this project is to explore the concept of bias through data on Wikipedia articles - specifically, articles on political figures from a variety of countries.
 
-## Data Sources Used
+## <a name="datasources"></a>Data Sources Used
 
 To create these tables, we will draw from two data sources:
   1. [The Wikipedia English Article Dataset (within the category "Category:Politicians by nationality")](https://figshare.com/articles/Untitled_Item/5513449)  
   2. [Population Data by Country](https://www.dropbox.com/s/5u7sy1xt7g0oi2c/WPDS_2018_data.csv?dl=0)  
 
-### Data Descriptions/Schemas
+### <a name="schemas"></a>Data Descriptions/Schemas
 
 #### The Wikipedia Dataset
 
@@ -34,7 +44,7 @@ To create these tables, we will draw from two data sources:
 | rev_id | The revision ID |
 | prediction | One of "B", "C", "Start", "Stub", "FA" or "GA" [(see below)](#ores) |
 
-## Resources Used
+## <a name="resources"></a>Resources Used
 
 ### Versions and Documentation
  * This analysis was prepared using Python 3.7 running in a Jupyter Notebook environment.  
@@ -103,11 +113,11 @@ The following Python packages were used and their documentation can be found at 
  * [tqdm](https://github.com/tqdm/tqdm): Fast and Extensible Progress Bar
  * [requests](http://docs.python-requests.org/en/master/): HTTP for Humans
 
-## Files Created
+## <a name="files"></a>Files Created
 
 An intermediate file called [`article_quality.csv`](./data/article_quality.csv) is created, which contains the predicted quality of each article.
 
-## Reproducibility
+## <a name="reproducibility"></a>Reproducibility
 
 In order to reproduce the results in this notebook, follow the following steps:
 
@@ -130,7 +140,7 @@ jupyter notebook
 ```
 5. To observe the exact same results as this notebook, simply rerun it in Jupyter. To retrieve fresh predictions from ORES, delete (or rename) the [`article_quality.csv`](./data/article_quality.csv) file
 
-## License
+## <a name="license"></a>License
 
  * This assignment code is released under the [MIT License](./LICENSE).  
  * The Wikipedia English language articles data source is released under the CC-BY-SA 4.0 license.  
