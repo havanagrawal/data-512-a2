@@ -6,7 +6,7 @@
 2. [Data Sources](#data-sources-used)
     1. [Data Schemas](#data-descriptionsschemas)
 3. [Resources Used](#resources-used)
-4. [Files Created](##files-created)
+4. [Files Created](#files-created)
 5. [Reproducibility](#reproducibility)
 6. [License](#license)
 7. [Writeup](#writeup)
@@ -165,9 +165,14 @@ jupyter notebook
 
 ### What I Learned
 
-I often find myself complaining about how most open-source projects that I use (or try to) have scarce levels of documentation, and that they are hardly understandable, let alone reproducible. I now realize how hard it is to provide just enough information for someone else to have all the context that I have in order to replicate my work. When I put on my "new person to this repo" hat, I find my own work rife with holes and gaps. It is commendable that projects that are more complex by several orders of magnitude that this one are adopted so heavily, and that the community drives the quality of the repository.
+#### Documentation and Reproducibility Are Hard
+I often find myself complaining about how most open-source projects that I use (or try to) have scarce levels of documentation, and that they are hardly understandable, let alone reproducible. I now realize how hard it is to provide just enough information for someone else to have all the context that I have in order to replicate my work. When I put on my "new person to this repo" hat, I find my own work rife with holes and gaps. It is commendable that projects that are more complex by several orders of magnitude are adopted so heavily, and that the community drives the quality of the repository.
 
-### What I Suspected (and validated)
+#### Accuracy is not the End Goal
+
+For the short period of four years that I have been dabbling in machine learning, I have always considered a numeric metric to be the goal; 99% is _always_ better than 95%. This assignment has taught me that critically analyzing the algorithm at hand, investigating the sources of bias, and providing context to the results are equally, if not more, important. I relate back to the phrase "the numbers speak for themselves", and think to myself "Well I can change that."
+
+### What I Suspected (and Validated)
 
 1. An obvious but important thing to note is that the source of these data is from the *English* Wikipedia pages. One might already suspect a bias in article quality due to this; articles about local politicians might be far richer in pages in their native language, than in English. Alternatively, if certain languages are not supported by Wikipedia, then pages relating to those countries, regardless of category, can be expected to be poorer in quality.
 2. With the metric that we are trying to measure, the population might be a stronger factor than the number of articles for that country. The number of articles vary from 1 to a few thousand (max-min ratio of 10<sup>3</sup>), whereas the population varies from 10<sup>4</sup> to 10<sup>9</sup> (max-min ratio of 10<sup>5</sup>). This, in my opinion, is a biased metric to measure; a country with twice the population does not necessarily have twice the number of politicians, let alone pages about them.
@@ -178,4 +183,4 @@ I often find myself complaining about how most open-source projects that I use (
 2. From the ORES Wiki:
  > The wp10 model bases its predictions on __structural characteristics__ of the article. E.g. How many sections are there? Is there an infobox? How many references? And do the references use a {{cite}} template? The wp10 model __doesn't evaluate the quality of the writing__ or whether or not there's a tone problem (e.g. a point of view being pushed). However, many of the structural characteristics of articles __seem to correlate__ strongly with good writing and tone, so the models work very well in practice.
 
-The way the ORES model evaluates the quality of the article itself appears to be biased towards the structure of the article than the content. In contrast, the original WP10 [article assessment](https://en.wikipedia.org/wiki/Wikipedia:Content_assessment#Grades) performed by humans has very strongly worded, and thoughtful criteria to attain a certain quality level.
+The way the ORES model evaluates the quality of the article itself appears to be biased towards the structure of the article than the content. In contrast, the original WP10 [article assessment](https://en.wikipedia.org/wiki/Wikipedia:Content_assessment#Grades) performed by humans has very strongly worded and thoughtful criteria to attain a certain quality level.
