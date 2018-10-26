@@ -9,6 +9,7 @@
 4. [Files Created](#files)
 5. [Reproducibility](#reproducibility)
 6. [License](#license)
+7. [Writeup](#writeup)
 
 ## <a name="goal"></a>Goal
 
@@ -43,6 +44,19 @@ To create these tables, we will draw from two data sources:
 |--------|-------------|
 | rev_id | The revision ID |
 | prediction | One of "B", "C", "Start", "Stub", "FA" or "GA" [(see below)](#ores) |
+
+#### Output File
+
+This is the final file used for analysis
+
+| Column | Description |
+|--------|-------------|
+| country | Country name |
+| hq_article_counts | The number of high quality articles for this country's politicians |
+| all_article_counts | The number of total articles for this country's politicians |
+| population | The population of this country, as of 2018 |
+| hq_articles_per_pop | The ratio of the number of high-quality articles to the population |
+| all_articles_per_pop | The ratio of the total number of articles to the population |
 
 ## <a name="resources"></a>Resources Used
 
@@ -145,3 +159,22 @@ jupyter notebook
  * This assignment code is released under the [MIT License](./LICENSE).  
  * The Wikipedia English language articles data source is released under the CC-BY-SA 4.0 license.  
  * The population data is released under the ??? license.  
+
+## Writeup
+
+### What I Learned
+
+I often find myself complaining about how most open-source projects that I use (or try to) have scarce levels of documentation, and that they are hardly understandable, let alone reproducible. I now realize how hard it is to provide just enough information for someone else to have all the context that I have in order to replicate my work. When I put on my "new person to this repo" hat, I find my own work rife with holes and gaps. It is commendable that projects that are more complex by several orders of magnitude that this one are adopted so heavily, and that the community drives the quality of the repository.
+
+### What I Suspected (and validated)
+
+1. An obvious but important thing to note is that the source of these data is from the *English* Wikipedia pages. One might already suspect a bias in article quality due to this; articles about local politicians might be far richer in pages in their native language, than in English. Alternatively, if certain languages are not supported by Wikipedia, then pages relating to those countries, regardless of category, can be expected to be poorer in quality.
+2. With the metric that we are trying to measure, the population might be a stronger factor than the number of articles for that country. The number of articles vary from 1 to a few thousand (max-min ratio of 10<sup>3</sup>), whereas the population varies from 10<sup>4</sup> to 10<sup>9</sup> (max-min ratio of 10<sup>5</sup>). This, in my opinion, is a biased metric to measure; a country with twice the population does not necessarily have twice the number of politicians, let alone pages about them.
+
+### What I Found
+
+1. As suspected, the lowest ranked countries for the HQ articles per population overlap strongly with the most populated countries (6 out of 10 in the former are in the latter).
+2. From the ORES Wiki:
+ > The wp10 model bases its predictions on __structural characteristics__ of the article. E.g. How many sections are there? Is there an infobox? How many references? And do the references use a {{cite}} template? The wp10 model __doesn't evaluate the quality of the writing__ or whether or not there's a tone problem (e.g. a point of view being pushed). However, many of the structural characteristics of articles __seem to correlate__ strongly with good writing and tone, so the models work very well in practice.
+
+The way the ORES model evaluates the quality of the article itself appears to be biased towards the structure of the article than the content. In contrast, the original WP10 [article assessment](https://en.wikipedia.org/wiki/Wikipedia:Content_assessment#Grades) performed by humans has very strongly worded, and thoughtful criteria to attain a certain quality level.
