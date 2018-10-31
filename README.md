@@ -55,7 +55,7 @@ This is the final file used for analysis
 | hq_article_counts | The number of high quality articles for this country's politicians |
 | all_article_counts | The number of total articles for this country's politicians |
 | population | The population of this country, as of 2018 |
-| hq_articles_per_pop | The ratio of the number of high-quality articles to the population |
+| hq_articles_ratio | The ratio of the number of high-quality articles to the total number of articles |
 | all_articles_per_pop | The ratio of the total number of articles to the population |
 
 ## Resources Used
@@ -179,7 +179,7 @@ For the short period of four years that I have been dabbling in machine learning
 
 ### What I Found
 
-1. As suspected, the lowest ranked countries for the HQ articles per population overlap strongly with the most populated countries (6 out of 10 in the former are in the latter).
+1. As suspected, the highest ranked countries for the total number of articles per population overlap strongly with the least populated countries (8 out of 10 in the former are in the latter).
 2. From the ORES Wiki:
  > The wp10 model bases its predictions on __structural characteristics__ of the article. E.g. How many sections are there? Is there an infobox? How many references? And do the references use a {{cite}} template? The wp10 model __doesn't evaluate the quality of the writing__ or whether or not there's a tone problem (e.g. a point of view being pushed). However, many of the structural characteristics of articles __seem to correlate__ strongly with good writing and tone, so the models work very well in practice.
 
